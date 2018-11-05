@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SAGE_APP.Models.Projeto>
+
+@{
+    ViewBag.Title = "Projetos - SAGE";
+}
+
+<h2>Projetos</h2>
+
+<div style="width: 100%; display: flex; justify-content: flex-end;">
+    <div style="width: 50%; float: left;">
+        @Html.ActionLink("Create New", "Create")
+    </div>
+    <div style="margin-left:auto; margin-right:0;">
+        @Html.ActionLink("Gerenciar matérias", "Index", "Materias")
+    </div>
+</div>
+<p></p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataProva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumVagas)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataProva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumVagas)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ProjetoId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ProjetoId }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.ProjetoId })
+        </td>
+        <td>
+            @Html.ActionLink("Matérias", "Index", "MateriaProjetos", new { nomeProjeto = item.Descricao }, null)
+        </td>
+    </tr>
+}
+
+</table>

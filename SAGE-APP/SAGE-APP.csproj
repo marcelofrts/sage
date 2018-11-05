@@ -198,12 +198,40 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MateriaProjetosController.cs" />
+    <Compile Include="Controllers\MateriasController.cs" />
+    <Compile Include="Controllers\ProjetosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810281941037_InitialModel.cs" />
+    <Compile Include="Migrations\201810281941037_InitialModel.Designer.cs">
+      <DependentUpon>201810281941037_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810281944527_AddUsuarios.cs" />
+    <Compile Include="Migrations\201810281944527_AddUsuarios.Designer.cs">
+      <DependentUpon>201810281944527_AddUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810281945586_AddProjetos.cs" />
+    <Compile Include="Migrations\201810281945586_AddProjetos.Designer.cs">
+      <DependentUpon>201810281945586_AddProjetos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810281956274_AddMaterias.cs" />
+    <Compile Include="Migrations\201810281956274_AddMaterias.Designer.cs">
+      <DependentUpon>201810281956274_AddMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810281959309_AddMateriasProjetos.cs" />
+    <Compile Include="Migrations\201810281959309_AddMateriasProjetos.Designer.cs">
+      <DependentUpon>201810281959309_AddMateriasProjetos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Materia.cs" />
+    <Compile Include="Models\MateriaProjeto.cs" />
+    <Compile Include="Models\Projeto.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -266,6 +294,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Projetos\Create.cshtml" />
+    <Content Include="Views\Projetos\Delete.cshtml" />
+    <Content Include="Views\Projetos\Details.cshtml" />
+    <Content Include="Views\Projetos\Edit.cshtml" />
+    <Content Include="Views\Projetos\Index.cshtml" />
+    <Content Include="Views\Materias\Create.cshtml" />
+    <Content Include="Views\Materias\Delete.cshtml" />
+    <Content Include="Views\Materias\Details.cshtml" />
+    <Content Include="Views\Materias\Edit.cshtml" />
+    <Content Include="Views\Materias\Index.cshtml" />
+    <Content Include="Views\MateriaProjetos\Create.cshtml" />
+    <Content Include="Views\MateriaProjetos\Delete.cshtml" />
+    <Content Include="Views\MateriaProjetos\Details.cshtml" />
+    <Content Include="Views\MateriaProjetos\Edit.cshtml" />
+    <Content Include="Views\MateriaProjetos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -282,6 +325,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810281941037_InitialModel.resx">
+      <DependentUpon>201810281941037_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810281944527_AddUsuarios.resx">
+      <DependentUpon>201810281944527_AddUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810281945586_AddProjetos.resx">
+      <DependentUpon>201810281945586_AddProjetos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810281956274_AddMaterias.resx">
+      <DependentUpon>201810281956274_AddMaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810281959309_AddMateriasProjetos.resx">
+      <DependentUpon>201810281959309_AddMateriasProjetos.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

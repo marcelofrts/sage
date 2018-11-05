@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SAGE_APP.Models.MateriaProjeto>
+
+@{
+    ViewBag.Title = "Matérias do projeto";
+}
+
+<h2>Projeto: @ViewBag.Projeto</h2>
+
+@using (Html.BeginForm("AddMateria", "MateriaProjetos", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <p></p>
+    <h5>
+        Matéria:
+
+        @*<select style="margin-left: 20px; width: 200px" id="materia">
+                <option>Português</option>
+                <option>Direito Adm.</option>
+                <option>Direito Const.</option>
+                <option>Direito Empr.</option>
+                <option>Economia</option>
+                <option>RLM</option>
+            </select>*@
+        @Html.DropDownList("materia", ViewBag.Materias as SelectList)
+        <input type="hidden" name="projeto" id="projeto" value="@ViewBag.ProjetoId" />
+        <input type="submit" value="Adicionar" class="btn btn-default" />
+
+    </h5>
+    <p></p>
+
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    <table class="table">
+        <tr>
+            <th>Matéria</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in ViewBag.MateriasProjetos)
+        {
+            <tr>
+                <td>
+                    @item.Item2
+                </td>
+                <td>
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.Item1 })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

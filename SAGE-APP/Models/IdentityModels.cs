@@ -20,6 +20,10 @@ namespace SAGE_APP.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Projeto> Projetos { get; set; }
+        public DbSet<Materia> Materias { get; set; }
+        public DbSet<MateriaProjeto> MateriasProjetos { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
